@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example";
+option java_outer_classname = "TransactionProto";
+option objc_class_prefix = "HLW";
+
+package com.example;
+service TransactionService {
+
+    // Deposit money
+    rpc Deposit (DepositRequest) returns (TransactionResponse);
+
+    // Withdraw money
+    rpc Withdraw (WithdrawRequest) returns (TransactionResponse);
+
+    // Transfer money between accounts
+     rpc Transfer (TransferRequest) returns (TransactionResponse);
+
+}
+
+
+
+// Deposit Request
+message DepositRequest {
+    string account_number = 1;
+    double amount = 2;
+}
+
+
+
+// Withdraw Request
+message WithdrawRequest {
+    string account_number = 1;
+    double amount = 2;
+}
+
+
+
+// Transfer Request
+message TransferRequest {
+    string from_account_number = 1;
+    string to_account_number = 2;
+    double amount = 3;
+}
+// Transaction Response
+message TransactionResponse {
+    int64 transaction_id = 1;
+   // string from_account = 2;
+    //string to_account = 3;
+    double amount = 4;
+   // string transaction_type = 5;   // DEPOSIT, WITHDRAW, TRANSFER
+    string status = 6;             // SUCCESS, FAILED
+}
+// List of Transactions

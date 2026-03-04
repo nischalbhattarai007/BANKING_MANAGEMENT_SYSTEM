@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example";
+option java_outer_classname = "AccountProto";
+option objc_class_prefix = "HLW";
+
+package com.example;
+
+service AccountService{
+    rpc CreateAccount(AccountRequest) returns (AccountResponse);
+    rpc GetAccountById(AccountRequestId) returns (AccountResponse);
+    rpc GetAccountByNumber(AccountNumber) returns(AccountResponse);
+    rpc GetAllAccount(Empty) returns (stream AccountResponse);
+}
+message AccountRequest{
+string account_holder_name=1;
+    string account_type=2;
+}
+message AccountResponse{
+    int64 id = 1;
+    string account_number = 2;
+    string account_holder_name = 3;
+    string account_type = 4;
+    double balance = 5;
+}
+message Empty{
+
+}
+
+message AccountRequestId{
+    int64 id=1;
+}
+message AccountNumber{
+    string account_number=1;
+}
