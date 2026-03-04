@@ -80,5 +80,6 @@ public class TransactionService {
         receiver.setBalance(receiver.getBalance() + amount);
         accountRepository.save(sender);
         accountRepository.save(receiver);
+        log.info("{} Amount from {} to {} sent successfully", amount, sender.getAccount_Holder_Name(), receiver.getAccount_Holder_Name());
     }
 }
