@@ -5,7 +5,6 @@ import com.example.exception.AccountNotFoundException;
 import com.example.repository.AccountRepository;
 import io.micronaut.http.HttpStatus;
 import io.micronaut.http.exceptions.HttpStatusException;
-import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
 import java.util.List;
@@ -14,7 +13,6 @@ import java.util.UUID;
 @Singleton
 public class AccountService {
     private final AccountRepository accountRepository;
-    @Inject
     public AccountService(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }

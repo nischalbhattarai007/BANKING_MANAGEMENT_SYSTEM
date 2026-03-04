@@ -4,7 +4,6 @@ import com.example.entity.AccountEntity;
 import com.example.entity.TransactionEntity;
 import com.example.repository.AccountRepository;
 import com.example.repository.TransactionalRepository;
-import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +15,6 @@ import java.time.LocalDateTime;
 public class TransactionService {
     private final TransactionalRepository transactionalRepository;
     private final AccountRepository accountRepository;
-    @Inject
     public TransactionService(TransactionalRepository transactionalRepository, AccountRepository accountRepository) {
         this.transactionalRepository = transactionalRepository;
         this.accountRepository = accountRepository;
