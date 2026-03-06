@@ -1,7 +1,8 @@
-package com.example.services;
+package com.example.endpoint;
 
 import com.example.*;
 import com.example.entity.AccountEntity;
+import com.example.services.AccountService;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import io.micronaut.grpc.annotation.GrpcService;

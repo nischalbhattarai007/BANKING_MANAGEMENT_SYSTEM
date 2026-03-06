@@ -1,7 +1,8 @@
-package com.example.services;
+package com.example.endpoint;
 
 import com.example.*;
 import com.example.entity.TransactionEntity;
+import com.example.services.TransactionService;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import jakarta.inject.Inject;
