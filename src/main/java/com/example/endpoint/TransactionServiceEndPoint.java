@@ -5,8 +5,9 @@ import com.example.entity.TransactionEntity;
 import com.example.services.TransactionService;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
+import io.micronaut.grpc.annotation.GrpcService;
 import jakarta.inject.Inject;
-
+@GrpcService
 public class TransactionServiceEndPoint extends TransactionServiceGrpc.TransactionServiceImplBase {
     private final TransactionService transactionService;
     @Inject
